@@ -35,13 +35,13 @@ class ViewController: UIViewController {
                 self.mainScreen.labelText.text = "Please sign in first!"
                 
                 //MARK: To do: Disable/hide other functionalities and reset chats
-                
-                //MARK: Reset tableView...
-                //self.contactsList.removeAll()
-                //self.mainScreen.tableViewContacts.reloadData()
+                self.mainScreen.buttonForum.isHidden = true
                 
                 //MARK: show sign in button
                 self.setupRightBarButton(isLoggedin: false)
+                
+                //MARK: set up title
+                self.title = "Smoke Free Hero"
                 
             }else{
                 //MARK: the user is signed in...
@@ -49,19 +49,19 @@ class ViewController: UIViewController {
                 self.mainScreen.labelText.text = "Welcome \(user?.displayName ?? "Anonymous")!"
                 
                 //MARK: To do: Enable/show other functionalities and load chats
+                self.mainScreen.buttonForum.isHidden = false
                 
                 //MARK: show log out button
                 self.setupRightBarButton(isLoggedin: true)
+                
+                //MARK: set up title
+                self.title = "Dashboard"
             }
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        //MARK: set up title
-        title = "Smoke Free Hero"
-        
     }
     
     //MARK: This method is called just before the view controller's view is about to be removed from the view hierarchy, we remove the listener here from the app so that we do not run the listener infinitely.
