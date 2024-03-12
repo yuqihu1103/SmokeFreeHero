@@ -13,7 +13,6 @@
 		0A9809032B0B431800C54412 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A9809012B0B431800C54412 /* Main.storyboard */; };
 		0A9809052B0B431A00C54412 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A9809042B0B431A00C54412 /* Assets.xcassets */; };
 		0A9809082B0B431A00C54412 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A9809062B0B431A00C54412 /* LaunchScreen.storyboard */; };
-		86EA215B2B1D9F41007B2DA3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 86EA215A2B1D9F41007B2DA3 /* GoogleService-Info.plist */; };
 		86EA215E2B1DA064007B2DA3 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 86EA215D2B1DA064007B2DA3 /* FirebaseAuth */; };
 		86EA21602B1DA064007B2DA3 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 86EA215F2B1DA064007B2DA3 /* FirebaseFirestore */; };
 		86EA21622B1DA064007B2DA3 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 86EA21612B1DA064007B2DA3 /* FirebaseFirestoreSwift */; };
@@ -26,6 +25,13 @@
 		86EA21742B1DA405007B2DA3 /* RegisterScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EA21732B1DA405007B2DA3 /* RegisterScreenViewController.swift */; };
 		86EA21762B1DA42B007B2DA3 /* RegisterScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EA21752B1DA42B007B2DA3 /* RegisterScreenView.swift */; };
 		86EA21782B1DA445007B2DA3 /* RegisterFirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EA21772B1DA445007B2DA3 /* RegisterFirebaseManager.swift */; };
+		B4D9DF002B1FBE2100EB7116 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B4D9DEFF2B1FBE2100EB7116 /* GoogleService-Info.plist */; };
+		B4D9DF032B1FBE5900EB7116 /* ThreadDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D9DF022B1FBE5900EB7116 /* ThreadDetailView.swift */; };
+		B4D9DF052B1FBE6D00EB7116 /* ThreadDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D9DF042B1FBE6D00EB7116 /* ThreadDetailViewController.swift */; };
+		B4D9DF072B1FC23A00EB7116 /* ThreadsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D9DF062B1FC23A00EB7116 /* ThreadsTableViewCell.swift */; };
+		B4D9DF0A2B1FC54900EB7116 /* Thread.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D9DF092B1FC54900EB7116 /* Thread.swift */; };
+		B4D9DF0D2B1FC67D00EB7116 /* ThreadDetailScreenFireBaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D9DF0C2B1FC67D00EB7116 /* ThreadDetailScreenFireBaseManager.swift */; };
+		B4D9DF0F2B1FCBD700EB7116 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D9DF0E2B1FCBD700EB7116 /* Post.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,7 +43,6 @@
 		0A9809042B0B431A00C54412 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0A9809072B0B431A00C54412 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0A9809092B0B431A00C54412 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		86EA215A2B1D9F41007B2DA3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		86EA21652B1DA1C7007B2DA3 /* MainScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenView.swift; sourceTree = "<group>"; };
 		86EA21672B1DA255007B2DA3 /* RightBarButtonManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightBarButtonManager.swift; sourceTree = "<group>"; };
 		86EA216C2B1DA313007B2DA3 /* SignInScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInScreenView.swift; sourceTree = "<group>"; };
@@ -46,6 +51,13 @@
 		86EA21732B1DA405007B2DA3 /* RegisterScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterScreenViewController.swift; sourceTree = "<group>"; };
 		86EA21752B1DA42B007B2DA3 /* RegisterScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterScreenView.swift; sourceTree = "<group>"; };
 		86EA21772B1DA445007B2DA3 /* RegisterFirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterFirebaseManager.swift; sourceTree = "<group>"; };
+		B4D9DEFF2B1FBE2100EB7116 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		B4D9DF022B1FBE5900EB7116 /* ThreadDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadDetailView.swift; sourceTree = "<group>"; };
+		B4D9DF042B1FBE6D00EB7116 /* ThreadDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadDetailViewController.swift; sourceTree = "<group>"; };
+		B4D9DF062B1FC23A00EB7116 /* ThreadsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadsTableViewCell.swift; sourceTree = "<group>"; };
+		B4D9DF092B1FC54900EB7116 /* Thread.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Thread.swift; sourceTree = "<group>"; };
+		B4D9DF0C2B1FC67D00EB7116 /* ThreadDetailScreenFireBaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadDetailScreenFireBaseManager.swift; sourceTree = "<group>"; };
+		B4D9DF0E2B1FCBD700EB7116 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,9 +94,10 @@
 		0A9808FA2B0B431800C54412 /* SmokeFreeLife */ = {
 			isa = PBXGroup;
 			children = (
+				B4D9DF082B1FC53500EB7116 /* Data Models */,
+				B4D9DF012B1FBE2C00EB7116 /* Thread Detail Screen */,
 				86EA21792B1DA466007B2DA3 /* Register Screen */,
 				86EA21722B1DA3A0007B2DA3 /* Sign In Screen */,
-				86EA215A2B1D9F41007B2DA3 /* GoogleService-Info.plist */,
 				0A9808FB2B0B431800C54412 /* AppDelegate.swift */,
 				86EA21692B1DA281007B2DA3 /* Main Screen */,
 				0A9808FD2B0B431800C54412 /* SceneDelegate.swift */,
@@ -92,6 +105,7 @@
 				0A9809042B0B431A00C54412 /* Assets.xcassets */,
 				0A9809062B0B431A00C54412 /* LaunchScreen.storyboard */,
 				0A9809092B0B431A00C54412 /* Info.plist */,
+				B4D9DEFF2B1FBE2100EB7116 /* GoogleService-Info.plist */,
 			);
 			path = SmokeFreeLife;
 			sourceTree = "<group>";
@@ -124,6 +138,26 @@
 				86EA21772B1DA445007B2DA3 /* RegisterFirebaseManager.swift */,
 			);
 			path = "Register Screen";
+			sourceTree = "<group>";
+		};
+		B4D9DF012B1FBE2C00EB7116 /* Thread Detail Screen */ = {
+			isa = PBXGroup;
+			children = (
+				B4D9DF022B1FBE5900EB7116 /* ThreadDetailView.swift */,
+				B4D9DF042B1FBE6D00EB7116 /* ThreadDetailViewController.swift */,
+				B4D9DF062B1FC23A00EB7116 /* ThreadsTableViewCell.swift */,
+				B4D9DF0C2B1FC67D00EB7116 /* ThreadDetailScreenFireBaseManager.swift */,
+			);
+			path = "Thread Detail Screen";
+			sourceTree = "<group>";
+		};
+		B4D9DF082B1FC53500EB7116 /* Data Models */ = {
+			isa = PBXGroup;
+			children = (
+				B4D9DF092B1FC54900EB7116 /* Thread.swift */,
+				B4D9DF0E2B1FCBD700EB7116 /* Post.swift */,
+			);
+			path = "Data Models";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -194,7 +228,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0A9809082B0B431A00C54412 /* LaunchScreen.storyboard in Resources */,
-				86EA215B2B1D9F41007B2DA3 /* GoogleService-Info.plist in Resources */,
+				B4D9DF002B1FBE2100EB7116 /* GoogleService-Info.plist in Resources */,
 				0A9809052B0B431A00C54412 /* Assets.xcassets in Resources */,
 				0A9809032B0B431800C54412 /* Main.storyboard in Resources */,
 			);
@@ -208,12 +242,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				0A9809002B0B431800C54412 /* ViewController.swift in Sources */,
+				B4D9DF0A2B1FC54900EB7116 /* Thread.swift in Sources */,
 				86EA216F2B1DA336007B2DA3 /* SignInFirebaseManager.swift in Sources */,
 				86EA21682B1DA255007B2DA3 /* RightBarButtonManager.swift in Sources */,
+				B4D9DF0F2B1FCBD700EB7116 /* Post.swift in Sources */,
+				B4D9DF072B1FC23A00EB7116 /* ThreadsTableViewCell.swift in Sources */,
 				86EA21782B1DA445007B2DA3 /* RegisterFirebaseManager.swift in Sources */,
+				B4D9DF052B1FBE6D00EB7116 /* ThreadDetailViewController.swift in Sources */,
 				86EA21742B1DA405007B2DA3 /* RegisterScreenViewController.swift in Sources */,
 				0A9808FC2B0B431800C54412 /* AppDelegate.swift in Sources */,
+				B4D9DF0D2B1FC67D00EB7116 /* ThreadDetailScreenFireBaseManager.swift in Sources */,
 				86EA21712B1DA389007B2DA3 /* SignInScreenViewController.swift in Sources */,
+				B4D9DF032B1FBE5900EB7116 /* ThreadDetailView.swift in Sources */,
 				0A9808FE2B0B431800C54412 /* SceneDelegate.swift in Sources */,
 				86EA21662B1DA1C7007B2DA3 /* MainScreenView.swift in Sources */,
 				86EA216D2B1DA313007B2DA3 /* SignInScreenView.swift in Sources */,
