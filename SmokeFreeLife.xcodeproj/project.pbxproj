@@ -23,6 +23,9 @@
 		86EA216D2B1DA313007B2DA3 /* SignInScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EA216C2B1DA313007B2DA3 /* SignInScreenView.swift */; };
 		86EA216F2B1DA336007B2DA3 /* SignInFirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EA216E2B1DA336007B2DA3 /* SignInFirebaseManager.swift */; };
 		86EA21712B1DA389007B2DA3 /* SignInScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EA21702B1DA389007B2DA3 /* SignInScreenViewController.swift */; };
+		86EA21742B1DA405007B2DA3 /* RegisterScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EA21732B1DA405007B2DA3 /* RegisterScreenViewController.swift */; };
+		86EA21762B1DA42B007B2DA3 /* RegisterScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EA21752B1DA42B007B2DA3 /* RegisterScreenView.swift */; };
+		86EA21782B1DA445007B2DA3 /* RegisterFirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EA21772B1DA445007B2DA3 /* RegisterFirebaseManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +43,9 @@
 		86EA216C2B1DA313007B2DA3 /* SignInScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInScreenView.swift; sourceTree = "<group>"; };
 		86EA216E2B1DA336007B2DA3 /* SignInFirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInFirebaseManager.swift; sourceTree = "<group>"; };
 		86EA21702B1DA389007B2DA3 /* SignInScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInScreenViewController.swift; sourceTree = "<group>"; };
+		86EA21732B1DA405007B2DA3 /* RegisterScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterScreenViewController.swift; sourceTree = "<group>"; };
+		86EA21752B1DA42B007B2DA3 /* RegisterScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterScreenView.swift; sourceTree = "<group>"; };
+		86EA21772B1DA445007B2DA3 /* RegisterFirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterFirebaseManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +82,7 @@
 		0A9808FA2B0B431800C54412 /* SmokeFreeLife */ = {
 			isa = PBXGroup;
 			children = (
+				86EA21792B1DA466007B2DA3 /* Register Screen */,
 				86EA21722B1DA3A0007B2DA3 /* Sign In Screen */,
 				86EA215A2B1D9F41007B2DA3 /* GoogleService-Info.plist */,
 				0A9808FB2B0B431800C54412 /* AppDelegate.swift */,
@@ -107,6 +114,16 @@
 				86EA21702B1DA389007B2DA3 /* SignInScreenViewController.swift */,
 			);
 			path = "Sign In Screen";
+			sourceTree = "<group>";
+		};
+		86EA21792B1DA466007B2DA3 /* Register Screen */ = {
+			isa = PBXGroup;
+			children = (
+				86EA21732B1DA405007B2DA3 /* RegisterScreenViewController.swift */,
+				86EA21752B1DA42B007B2DA3 /* RegisterScreenView.swift */,
+				86EA21772B1DA445007B2DA3 /* RegisterFirebaseManager.swift */,
+			);
+			path = "Register Screen";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,11 +210,14 @@
 				0A9809002B0B431800C54412 /* ViewController.swift in Sources */,
 				86EA216F2B1DA336007B2DA3 /* SignInFirebaseManager.swift in Sources */,
 				86EA21682B1DA255007B2DA3 /* RightBarButtonManager.swift in Sources */,
+				86EA21782B1DA445007B2DA3 /* RegisterFirebaseManager.swift in Sources */,
+				86EA21742B1DA405007B2DA3 /* RegisterScreenViewController.swift in Sources */,
 				0A9808FC2B0B431800C54412 /* AppDelegate.swift in Sources */,
 				86EA21712B1DA389007B2DA3 /* SignInScreenViewController.swift in Sources */,
 				0A9808FE2B0B431800C54412 /* SceneDelegate.swift in Sources */,
 				86EA21662B1DA1C7007B2DA3 /* MainScreenView.swift in Sources */,
 				86EA216D2B1DA313007B2DA3 /* SignInScreenView.swift in Sources */,
+				86EA21762B1DA42B007B2DA3 /* RegisterScreenView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -32,7 +32,7 @@ class ViewController: UIViewController {
             if user == nil{
                 //MARK: not signed in...
                 self.currentUser = nil
-                self.mainScreen.labelText.text = "Please sign in to chat!"
+                self.mainScreen.labelText.text = "Please sign in first!"
                 
                 //MARK: To do: Disable/hide other functionalities and reset chats
                 
@@ -60,7 +60,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         //MARK: set up title
-        title = "My Messenger"
+        title = "Smoke Free Hero"
         
     }
     
