@@ -62,12 +62,22 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        mainScreen.buttonForum.addTarget(self, action: #selector(onButtonForumTapped), for: .touchUpInside)
     }
     
     //MARK: This method is called just before the view controller's view is about to be removed from the view hierarchy, we remove the listener here from the app so that we do not run the listener infinitely.
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         Auth.auth().removeStateDidChangeListener(handleAuth!)
+    }
+    
+    @objc func onButtonForumTapped(){
+        let ThreadScreen = ThreadDetailViewController()
+        
+        if let user = self.currentUser{
+            ThreadScreen.currentUserName = user.displayName
+        }
+        navigationController?.pushViewController(ThreadScreen, animated: true)
     }
 
 }
