@@ -27,6 +27,8 @@ class RegisterScreenView: UIView {
     var labelPhoto:UILabel!
     var buttonTakePhoto: UIButton!
     
+    var activityIndicator: UIActivityIndicatorView!
+    
     override init(frame: CGRect){
         super.init(frame: frame)
         self.backgroundColor = .white
@@ -50,6 +52,8 @@ class RegisterScreenView: UIView {
         
         setuplabelPhoto()
         setupbuttonTakePhoto()
+        
+        setupActivityIndicator()
         
         initConstraints()
     }
@@ -171,6 +175,18 @@ class RegisterScreenView: UIView {
         buttonTakePhoto.translatesAutoresizingMaskIntoConstraints = false
         scrollView.addSubview(buttonTakePhoto)
     }
+    
+    func setupActivityIndicator() {
+            activityIndicator = UIActivityIndicatorView(style: .large)
+            activityIndicator.color = .gray
+            activityIndicator.translatesAutoresizingMaskIntoConstraints = false
+            self.addSubview(activityIndicator)
+            
+            NSLayoutConstraint.activate([
+                activityIndicator.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+                activityIndicator.topAnchor.constraint(equalTo: buttonRegister.bottomAnchor, constant: 8)
+            ])
+        }
     
     func initConstraints(){
         NSLayoutConstraint.activate([

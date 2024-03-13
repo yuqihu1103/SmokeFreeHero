@@ -85,13 +85,20 @@ class RegisterScreenViewController: UIViewController {
                       return
                   }
         
-        guard let pickedImage = pickedImage else {
+        guard pickedImage != nil else {
                 showAlert(message: "Please select a profile photo.")
                 return
             }
         
+        registerView.activityIndicator.startAnimating()
+        
         //MARK: creating a new user on Firebase...
         self.registerNewAccount(name: name, email: email, password: password, numCigarettes: numCigarettes, amountMoney: amountMoney)
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+            // Stop activity indicator after registration completion
+            self.registerView.activityIndicator.stopAnimating()
+        }
     }
     
     //MARK: Helper method to validate a email format
@@ -144,6 +151,12 @@ class RegisterScreenViewController: UIViewController {
         photoPicker.delegate = self
         present(photoPicker, animated: true, completion: nil)
     }
+    
+    func showRegistrationCompleteAlert() {
+            let alert = UIAlertController(title: "Success", message: "Registration completed!", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            present(alert, animated: true, completion: nil)
+        }
     
 }
 
