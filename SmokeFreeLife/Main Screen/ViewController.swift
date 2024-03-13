@@ -36,6 +36,7 @@ class ViewController: UIViewController {
                 
                 //MARK: To do: Disable/hide other functionalities and reset chats
                 self.mainScreen.buttonForum.isHidden = true
+                self.mainScreen.buttonProfile.isHidden = true
                 
                 //MARK: show sign in button
                 self.setupRightBarButton(isLoggedin: false)
@@ -50,6 +51,7 @@ class ViewController: UIViewController {
                 
                 //MARK: To do: Enable/show other functionalities and load chats
                 self.mainScreen.buttonForum.isHidden = false
+                self.mainScreen.buttonProfile.isHidden = false
                 
                 //MARK: show log out button
                 self.setupRightBarButton(isLoggedin: true)
@@ -63,6 +65,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         mainScreen.buttonForum.addTarget(self, action: #selector(onButtonForumTapped), for: .touchUpInside)
+        mainScreen.buttonProfile.addTarget(self, action: #selector(onButtonProfileTapped), for: .touchUpInside)
     }
     
     //MARK: This method is called just before the view controller's view is about to be removed from the view hierarchy, we remove the listener here from the app so that we do not run the listener infinitely.
@@ -78,6 +81,11 @@ class ViewController: UIViewController {
             ThreadScreen.currentUserName = user.displayName
         }
         navigationController?.pushViewController(ThreadScreen, animated: true)
+    }
+    
+    @objc func onButtonProfileTapped(){
+        let profileScreen = ProfileScreenViewController()
+        navigationController?.pushViewController(profileScreen, animated: true)
     }
 
 }

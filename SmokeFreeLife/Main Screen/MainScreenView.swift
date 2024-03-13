@@ -10,6 +10,7 @@ import UIKit
 class MainScreenView: UIView {
     var labelText: UILabel!
     var buttonForum: UIButton!
+    var buttonProfile: UIButton!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -17,6 +18,8 @@ class MainScreenView: UIView {
         
         setupLabelText()
         setupButtonForum()
+        setupButtonProfile()
+        
         initConstraints()
     }
     
@@ -37,6 +40,14 @@ class MainScreenView: UIView {
         self.addSubview(buttonForum)
     }
     
+    func setupButtonProfile() {
+        buttonProfile = UIButton(type: .system)
+        buttonProfile.setTitle("Profile", for: .normal)
+        buttonProfile.titleLabel?.font = .systemFont(ofSize: 32)
+        buttonProfile.translatesAutoresizingMaskIntoConstraints = false
+        self.addSubview(buttonProfile)
+    }
+    
     // MARK: - Setting up constraints
     
     func initConstraints() {
@@ -44,9 +55,11 @@ class MainScreenView: UIView {
             labelText.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 32),
             labelText.centerXAnchor.constraint(equalTo: self.safeAreaLayoutGuide.centerXAnchor),
             
-            buttonForum.topAnchor.constraint(equalTo: labelText.bottomAnchor, constant: 20),
+            buttonForum.topAnchor.constraint(equalTo: buttonProfile.bottomAnchor, constant: 20),
             buttonForum.centerXAnchor.constraint(equalTo: self.safeAreaLayoutGuide.centerXAnchor),
-            // Add more constraints as needed
+            
+            buttonProfile.topAnchor.constraint(equalTo: labelText.bottomAnchor, constant: 20),
+            buttonProfile.centerXAnchor.constraint(equalTo: self.safeAreaLayoutGuide.centerXAnchor),
         ])
     }
     
