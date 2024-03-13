@@ -9,8 +9,10 @@ import Foundation
 import FirebaseAuth
 import FirebaseFirestore
 import FirebaseFirestoreSwift
+import FirebaseStorage
 
 extension RegisterScreenViewController{
+
     
     func registerNewAccount(name: String, email: String, password: String, numCigarettes: Int, amountMoney: Double) {
         //MARK: create a Firebase user with email and password...
@@ -68,6 +70,62 @@ extension RegisterScreenViewController{
                 self.showAlert(message: "Error writing user data to Firestore: \(error.localizedDescription)")
             } else {
                 print("User data saved to Firestore successfully")
+                guard let pickedImage = self.pickedImage else {
+                        return
+                    }
+                self.uploadProfilePhoto(pickedImage)
+            }
+        }
+    }
+    
+    func uploadProfilePhoto(_ image: UIImage) {
+        guard let user = Auth.auth().currentUser else {
+            showAlert(message: "User not found.")
+            return
+        }
+
+        // Convert image to Data
+        guard let imageData = image.jpegData(compressionQuality: 0.5) else {
+            showAlert(message: "Failed to convert image to data.")
+            return
+        }
+
+        let storageRef = storage.reference()
+        let profileImagesRef = storageRef.child("profile_images/\(user.uid).jpg")
+
+        // Upload image data to Firebase Storage
+        let metadata = StorageMetadata()
+        metadata.contentType = "image/jpeg"
+
+        let uploadTask = profileImagesRef.putData(imageData, metadata: metadata) { metadata, error in
+            if let error = error {
+                self.showAlert(message: "Error uploading profile photo: \(error.localizedDescription)")
+            } else {
+                // Profile photo uploaded successfully
+                // Retrieve the download URL and save it to user's profile
+                profileImagesRef.downloadURL { url, error in
+                    if let error = error {
+                        self.showAlert(message: "Error retrieving download URL: \(error.localizedDescription)")
+                    } else if let downloadURL = url {
+                        // Update user profile with the download URL
+                        self.updateUserProfile(downloadURL)
+                    }
+                }
+            }
+        }
+    }
+
+    func updateUserProfile(_ photoURL: URL) {
+        guard let user = Auth.auth().currentUser else { return }
+
+        let changeRequest = user.createProfileChangeRequest()
+        changeRequest.photoURL = photoURL
+
+        changeRequest.commitChanges { error in
+            if let error = error {
+                self.showAlert(message: "Error updating user profile: \(error.localizedDescription)")
+            } else {
+                print("User profile updated successfully with photo URL")
             }
         }
     }

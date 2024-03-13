@@ -24,6 +24,9 @@ class RegisterScreenView: UIView {
     var labelNumCigarettes: UILabel!
     var labelAmountMoney: UILabel!
     
+    var labelPhoto:UILabel!
+    var buttonTakePhoto: UIButton!
+    
     override init(frame: CGRect){
         super.init(frame: frame)
         self.backgroundColor = .white
@@ -44,6 +47,9 @@ class RegisterScreenView: UIView {
         setuptextFieldNumCigarettes()
         setuptextFieldAmountMoney()
         setupLabelsForAdditionalInfo()
+        
+        setuplabelPhoto()
+        setupbuttonTakePhoto()
         
         initConstraints()
     }
@@ -146,6 +152,26 @@ class RegisterScreenView: UIView {
             scrollView.addSubview(labelAmountMoney)
         }
     
+    func setuplabelPhoto(){
+        labelPhoto = UILabel()
+        labelPhoto.text = "Add Profile Photo"
+        labelPhoto.translatesAutoresizingMaskIntoConstraints = false
+        scrollView.addSubview(labelPhoto)
+    }
+    
+    func setupbuttonTakePhoto(){
+        buttonTakePhoto = UIButton(type: .system)
+        buttonTakePhoto.setTitle("", for: .normal)
+        buttonTakePhoto.setImage(UIImage(systemName: "camera.fill")?.withRenderingMode(.alwaysOriginal), for: .normal)
+        //buttonTakePhoto.setImage(UIImage(systemName: "camera.fill")?.withRenderingMode(.alwaysOriginal), for: .normal)
+        buttonTakePhoto.contentHorizontalAlignment = .fill
+        buttonTakePhoto.contentVerticalAlignment = .fill
+        buttonTakePhoto.imageView?.contentMode = .scaleAspectFit
+        buttonTakePhoto.showsMenuAsPrimaryAction = true
+        buttonTakePhoto.translatesAutoresizingMaskIntoConstraints = false
+        scrollView.addSubview(buttonTakePhoto)
+    }
+    
     func initConstraints(){
         NSLayoutConstraint.activate([
             // Scroll View Constraints
@@ -175,7 +201,7 @@ class RegisterScreenView: UIView {
             textFieldRepeatPassword.widthAnchor.constraint(equalTo: scrollView.widthAnchor, multiplier: 0.9),
             
             // Button Register Constraints
-            buttonRegister.topAnchor.constraint(equalTo: textFieldAmountMoney.bottomAnchor, constant: 32),
+            buttonRegister.topAnchor.constraint(equalTo: buttonTakePhoto.bottomAnchor, constant: 32),
             buttonRegister.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
             buttonRegister.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
             
@@ -211,7 +237,17 @@ class RegisterScreenView: UIView {
                     
                     // Label Amount Money Constraints
                     labelAmountMoney.bottomAnchor.constraint(equalTo: textFieldAmountMoney.topAnchor, constant: -8),
-                    labelAmountMoney.leadingAnchor.constraint(equalTo: textFieldAmountMoney.leadingAnchor)
+                    labelAmountMoney.leadingAnchor.constraint(equalTo: textFieldAmountMoney.leadingAnchor),
+            
+            // Label Photo Constraints
+            labelPhoto.topAnchor.constraint(equalTo: textFieldAmountMoney.bottomAnchor, constant: 8),
+            labelPhoto.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 20),
+            
+            // Button Take Photo Constraints
+            buttonTakePhoto.topAnchor.constraint(equalTo: labelPhoto.bottomAnchor, constant: 8),
+            buttonTakePhoto.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 20),
+            buttonTakePhoto.widthAnchor.constraint(equalToConstant: 40),
+            buttonTakePhoto.heightAnchor.constraint(equalToConstant: 40),
         ])
     }
 
@@ -220,3 +256,5 @@ class RegisterScreenView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 }
+
+
