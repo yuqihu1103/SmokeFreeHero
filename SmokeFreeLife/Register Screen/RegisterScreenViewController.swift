@@ -67,8 +67,18 @@ class RegisterScreenViewController: UIViewController {
             return
         }
         
+        guard let numCigarettesText = registerView.textFieldNumCigarettes.text,
+                  let amountMoneyText = registerView.textFieldAmountMoney.text,
+                  let numCigarettes = Int(numCigarettesText),
+                  let amountMoney = Double(amountMoneyText),
+                  numCigarettes >= 0,
+                  amountMoney >= 0 else {
+                      showAlert(message: "Please enter valid values for cigarettes and money.")
+                      return
+                  }
+        
         //MARK: creating a new user on Firebase...
-        self.registerNewAccount(name:name, email:email, password:password)
+        self.registerNewAccount(name: name, email: email, password: password, numCigarettes: numCigarettes, amountMoney: amountMoney)
     }
     
     //MARK: Helper method to validate a email format

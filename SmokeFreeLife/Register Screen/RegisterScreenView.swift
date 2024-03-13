@@ -19,6 +19,11 @@ class RegisterScreenView: UIView {
     var labelRepeatPassword: UILabel!
     var buttonRegister: UIButton!
     
+    var textFieldNumCigarettes: UITextField!
+    var textFieldAmountMoney: UITextField!
+    var labelNumCigarettes: UILabel!
+    var labelAmountMoney: UILabel!
+    
     override init(frame: CGRect){
         super.init(frame: frame)
         self.backgroundColor = .white
@@ -35,6 +40,10 @@ class RegisterScreenView: UIView {
         setupbuttonRegister()
         setuptextFieldRepeatPassword()
         setupLabels()
+        
+        setuptextFieldNumCigarettes()
+        setuptextFieldAmountMoney()
+        setupLabelsForAdditionalInfo()
         
         initConstraints()
     }
@@ -107,6 +116,36 @@ class RegisterScreenView: UIView {
             scrollView.addSubview(labelRepeatPassword)
         }
     
+    func setuptextFieldNumCigarettes() {
+            textFieldNumCigarettes = UITextField()
+            textFieldNumCigarettes.placeholder = "Number of cigarettes per day"
+            textFieldNumCigarettes.keyboardType = .numberPad
+            textFieldNumCigarettes.borderStyle = .roundedRect
+            textFieldNumCigarettes.translatesAutoresizingMaskIntoConstraints = false
+            scrollView.addSubview(textFieldNumCigarettes)
+        }
+        
+        func setuptextFieldAmountMoney() {
+            textFieldAmountMoney = UITextField()
+            textFieldAmountMoney.placeholder = "Amount of money spent per day"
+            textFieldAmountMoney.keyboardType = .decimalPad
+            textFieldAmountMoney.borderStyle = .roundedRect
+            textFieldAmountMoney.translatesAutoresizingMaskIntoConstraints = false
+            scrollView.addSubview(textFieldAmountMoney)
+        }
+        
+        func setupLabelsForAdditionalInfo() {
+            labelNumCigarettes = UILabel()
+            labelNumCigarettes.text = "Number of cigarettes per day"
+            labelNumCigarettes.translatesAutoresizingMaskIntoConstraints = false
+            scrollView.addSubview(labelNumCigarettes)
+
+            labelAmountMoney = UILabel()
+            labelAmountMoney.text = "Amount of money spent per day"
+            labelAmountMoney.translatesAutoresizingMaskIntoConstraints = false
+            scrollView.addSubview(labelAmountMoney)
+        }
+    
     func initConstraints(){
         NSLayoutConstraint.activate([
             // Scroll View Constraints
@@ -136,7 +175,7 @@ class RegisterScreenView: UIView {
             textFieldRepeatPassword.widthAnchor.constraint(equalTo: scrollView.widthAnchor, multiplier: 0.9),
             
             // Button Register Constraints
-            buttonRegister.topAnchor.constraint(equalTo: textFieldRepeatPassword.bottomAnchor, constant: 32),
+            buttonRegister.topAnchor.constraint(equalTo: textFieldAmountMoney.bottomAnchor, constant: 32),
             buttonRegister.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
             buttonRegister.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
             
@@ -155,6 +194,24 @@ class RegisterScreenView: UIView {
             // Label Repeat Password Constraints
             labelRepeatPassword.bottomAnchor.constraint(equalTo: textFieldRepeatPassword.topAnchor, constant: -8),
             labelRepeatPassword.leadingAnchor.constraint(equalTo: textFieldRepeatPassword.leadingAnchor),
+        
+            // Text Field Num Cigarettes Constraints
+                    textFieldNumCigarettes.topAnchor.constraint(equalTo: textFieldRepeatPassword.bottomAnchor, constant: 40),
+                    textFieldNumCigarettes.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
+                    textFieldNumCigarettes.widthAnchor.constraint(equalTo: scrollView.widthAnchor, multiplier: 0.9),
+                    
+                    // Text Field Amount Money Constraints
+                    textFieldAmountMoney.topAnchor.constraint(equalTo: textFieldNumCigarettes.bottomAnchor, constant: 40),
+                    textFieldAmountMoney.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
+                    textFieldAmountMoney.widthAnchor.constraint(equalTo: scrollView.widthAnchor, multiplier: 0.9),
+                    
+                    // Label Num Cigarettes Constraints
+                    labelNumCigarettes.bottomAnchor.constraint(equalTo: textFieldNumCigarettes.topAnchor, constant: -8),
+                    labelNumCigarettes.leadingAnchor.constraint(equalTo: textFieldNumCigarettes.leadingAnchor),
+                    
+                    // Label Amount Money Constraints
+                    labelAmountMoney.bottomAnchor.constraint(equalTo: textFieldAmountMoney.topAnchor, constant: -8),
+                    labelAmountMoney.leadingAnchor.constraint(equalTo: textFieldAmountMoney.leadingAnchor)
         ])
     }
 
