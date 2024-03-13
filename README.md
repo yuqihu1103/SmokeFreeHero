@@ -4,6 +4,8 @@
 
 **Project Objectives:**
 
+The SmokeFreeHero is an iOS app dedicated to supporting quitting smoke. It provides functionalities such as tracking users’ smoke-free time, calculating associated financial and health benefits, and engaging in a community forum for mutual support and discussion with fellow smoke-quitters.
+
 ## Project Demo and Presentation
 
 **Project Demo Video:**
@@ -18,7 +20,13 @@
 
 ## Project Design
 
-Design documents can be found in the [docs](docs) folder, including:
+Design document can be found in the [docs](docs) folder, including information on:
+
+1. Introduction - Aims and Planned Features, Target Audience and Product Niche
+2. Draft Design - Screen-by-screen Sketch Up
+3. Design of Screen-to-screen Flow
+4. Backend Design - User Authentication and Database
+5. Use of Sensors
 
 ## Others
 
