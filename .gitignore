@@ -258,3 +258,4 @@ FirebaseAppCheck/Apps/AppCheckCustomProvideApp/AppCheckCustomProvideApp/GoogleSe
 .terraform.lock.hcl
 *.tfstate
 *.tfstate.*
+.DS_Store
