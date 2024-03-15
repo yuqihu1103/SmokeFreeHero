@@ -132,5 +132,3 @@ extension RegisterScreenViewController{
 
 }
 
-
-
