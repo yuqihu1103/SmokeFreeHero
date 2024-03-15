@@ -75,12 +75,12 @@ class ViewController: UIViewController {
     }
     
     @objc func onButtonForumTapped(){
-        let ThreadScreen = ThreadDetailViewController()
+        let ForumScreen = ForumScreenViewController()
         
         if let user = self.currentUser{
-            ThreadScreen.currentUserName = user.displayName
+            ForumScreen.currentUserName = user.displayName
         }
-        navigationController?.pushViewController(ThreadScreen, animated: true)
+        navigationController?.pushViewController(ForumScreen, animated: true)
     }
     
     @objc func onButtonProfileTapped(){

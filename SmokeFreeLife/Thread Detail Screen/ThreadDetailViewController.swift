@@ -15,8 +15,10 @@ class ThreadDetailViewController: UIViewController, UITableViewDataSource, UITab
     let threadScreen = ThreadDetailView()
     let db = Firestore.firestore()
     var currentUserName: String?
-    var currentPost: String?
     var threads = [Thread]()
+    var currentPost: String?
+    var rootPost: Post?
+    var rootPostId: String?
     
     override func loadView() {
         view = threadScreen
@@ -25,8 +27,42 @@ class ThreadDetailViewController: UIViewController, UITableViewDataSource, UITab
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-
-        if let threadID = currentPost {
+        if let threadID = rootPostId {
+            let currentPost = db.collection("ThreadDetails").document(threadID)
+            
+            currentPost.addSnapshotListener(includeMetadataChanges: false) { [weak self] querySnapshot, error in
+                guard let self = self else { return }
+                
+                if let error = error {
+                    print("Error fetching threads: \(error.localizedDescription)")
+                    return
+                }
+                
+                guard let document = querySnapshot else {
+                    print("No threads found")
+                    return
+                }
+                
+               
+                let title = document.data()?["title"] as? String ?? ""
+                let threadStarter = document.data()?["ThreadStarter"] as? String ?? ""
+                let timestamp = document.data()?["Timestamp"] as? String ?? ""
+                let content = document.data()?["content"] as? String ?? ""
+                print(title)
+                    
+                let post = Post(title: title, content: content, ThreadStarter: threadStarter, Timestamp: timestamp)
+                
+                self.rootPost = post
+                threadScreen.labelContent.text = rootPost?.content
+                threadScreen.Timestamp.text = rootPost?.Timestamp
+                threadScreen.ThreadStarterName.text = rootPost?.ThreadStarter
+                
+            }
+            
+        }
+        
+        
+        if let threadID = rootPostId {
             let threadsRef = db.collection("ThreadDetails").document(threadID).collection("posts")
             
             threadsRef.addSnapshotListener(includeMetadataChanges: false) { [weak self] querySnapshot, error in
@@ -84,12 +120,6 @@ class ThreadDetailViewController: UIViewController, UITableViewDataSource, UITab
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // When landing screen is implemented, the four lines below should be deleted
-        currentPost = "nO8Ng94Cov2c7jeiNaQK"
-        threadScreen.labelContent.text = "aloha"
-        threadScreen.Timestamp.text = "2023/11/10 22:52 PM"
-        threadScreen.ThreadStarterName.text = "Sam"
                         
         threadScreen.threadTableView.dataSource = self
         threadScreen.threadTableView.delegate = self
