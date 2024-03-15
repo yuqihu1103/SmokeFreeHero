@@ -6,17 +6,38 @@
 
 The SmokeFreeHero is an iOS app dedicated to supporting quitting smoke. It provides functionalities such as tracking users’ smoke-free time, calculating associated financial and health benefits, and engaging in a community forum for mutual support and discussion with fellow smoke-quitters.
 
-## Project Demo and Presentation
+## Demo
 
 **Project Demo Video:**
 
-**Project Presentation and Slides:** 
-
-**Overview(gif)**
+**Overview**
 
 
 ## Instructions to Build and Use
 
+### Requirements
+You need to have a Google Firebase account for all functionalites to work.
+
+### Installation
+
+1. Clone or download the repository.
+2. Open Terminal and navigate to the project directory.
+3. Install CocoaPods (if not already installed) by running:
+```
+sudo gem install cocoapods
+```
+4. Install the project dependencies by running
+```
+pod install
+```
+5. Open the `SmokeFreeLife.xcworkspace` file in Xcode.
+
+### Usage
+
+1. Go to the Firebase Console and create a new project.
+2. Add your iOS app to the Firebase project and download the `GoogleService-Info.plist` file.
+3. Add the `GoogleService-Info.plist` file to your Xcode project.
+4. Build and run your app in Xcode to test Firebase integration.
 
 ## Project Design
 
