@@ -60,7 +60,7 @@ class EditProfileScreenViewController: UIViewController {
             return
         }
         
-        if numCigarettes < 0 or amountSpent < 0{
+        guard numCigarettes >= 0, amountSpent >= 0 else {
             showAlert(message: "Both values must be positive!")
             return
         }
