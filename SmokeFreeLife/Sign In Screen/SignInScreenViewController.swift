@@ -24,12 +24,6 @@ class SignInScreenViewController: UIViewController {
         title = "Sign In"
         
         signInView.buttonSignIn.addTarget(self, action: #selector(onSignInTapped), for: .touchUpInside)
-        
-        
-        //MARK: recognizing the taps on the app screen, not the keyboard...
-        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(hideKeyboardOnTap))
-        tapRecognizer.cancelsTouchesInView = false
-        view.addGestureRecognizer(tapRecognizer)
 
     }
     
@@ -68,12 +62,5 @@ class SignInScreenViewController: UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
     
-    //MARK: Hide Keyboard...
-    @objc func hideKeyboardOnTap(){
-        //MARK: removing the keyboard from screen...
-        view.endEditing(true)
-    }
-    
 }
-
 

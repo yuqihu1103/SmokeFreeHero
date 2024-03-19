@@ -28,5 +28,5 @@ extension ThreadDetailViewController{
             }
         }
     }
-    
+
 }

@@ -97,7 +97,7 @@ extension RegisterScreenViewController{
         let metadata = StorageMetadata()
         metadata.contentType = "image/jpeg"
 
-       profileImagesRef.putData(imageData, metadata: metadata) { metadata, error in
+        let uploadTask = profileImagesRef.putData(imageData, metadata: metadata) { metadata, error in
             if let error = error {
                 self.showAlert(message: "Error uploading profile photo: \(error.localizedDescription)")
             } else {
@@ -131,4 +131,6 @@ extension RegisterScreenViewController{
     }
 
 }
+
+
 

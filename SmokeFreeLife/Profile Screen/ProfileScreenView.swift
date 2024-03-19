@@ -14,7 +14,6 @@ class ProfileScreenView: UIView {
     var emailLabel: UILabel!
     var numCigarettesLabel: UILabel!
     var amountSpentLabel: UILabel!
-    var buttonEdit: UIButton!
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -48,12 +47,6 @@ class ProfileScreenView: UIView {
         amountSpentLabel.translatesAutoresizingMaskIntoConstraints = false
         scrollView.addSubview(amountSpentLabel)
         
-        buttonEdit = UIButton(type: .system)
-        buttonEdit.setTitle("Edit Smoking Info", for: .normal)
-        buttonEdit.titleLabel?.font = .boldSystemFont(ofSize: 16)
-        buttonEdit.translatesAutoresizingMaskIntoConstraints = false
-        scrollView.addSubview(buttonEdit)
-        
         setupConstraints()
     }
     
@@ -80,10 +73,7 @@ class ProfileScreenView: UIView {
             
             amountSpentLabel.topAnchor.constraint(equalTo: numCigarettesLabel.bottomAnchor, constant: 10),
             amountSpentLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
-            amountSpentLabel.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: -20),
-            
-            buttonEdit.centerXAnchor.constraint(equalTo: centerXAnchor),
-            buttonEdit.topAnchor.constraint(equalTo: amountSpentLabel.bottomAnchor, constant: 10),
+            amountSpentLabel.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: -20)
         ])
     }
 
