@@ -15,6 +15,7 @@ class EditProfileScreenViewController: UIViewController {
     let editProfileView = EditProfileScreenView()
     var pickedImage:UIImage?
     let storage = Storage.storage()
+    let notificationCenter = NotificationCenter.default
     
     override func loadView() {
         view = editProfileView
@@ -55,6 +56,12 @@ class EditProfileScreenViewController: UIViewController {
               let amountSpentText = editProfileView.amountSpentTextField.text,
               let numCigarettes = Int(numCigarettesText),
               let amountSpent = Double(amountSpentText) else {
+            showAlert(message: "Missing or invalid input! Num Cig must be integer and Amount Spent must be a number!")
+            return
+        }
+        
+        if numCigarettes < 0 or amountSpent < 0{
+            showAlert(message: "Both values must be positive!")
             return
         }
 
@@ -67,9 +74,20 @@ class EditProfileScreenViewController: UIViewController {
                     let userRef = Firestore.firestore().collection("Users").document(document.documentID)
                     userRef.updateData(["numCigarettes": numCigarettes])
                     userRef.updateData(["amountMoney": amountSpent])
+                    self?.notificationCenter.post(
+                        name: Notification.Name("infoEdited"),
+                        object: nil)
+                    self?.navigationController?.popViewController(animated: true)
                 }
-                self?.navigationController?.popViewController(animated: true)
+
         }
+    }
+    
+    //MARK: Helper method to show an alert
+    func showAlert(message: String) {
+        let alert = UIAlertController(title: "Alert", message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
 
 }

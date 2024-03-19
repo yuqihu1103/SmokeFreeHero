@@ -31,12 +31,12 @@ class ProfileScreenViewController: UIViewController {
         notificationCenter.addObserver(
             self,
             selector: #selector(notificationReceivedForTextChanged(notification:)),
-            name: Notification.Name("textFromSecondScreen"),
+            name: Notification.Name("infoEdited"),
             object: nil)
     }
     
     @objc func notificationReceivedForTextChanged(notification: Notification){
-        fetchUserProfile()
+        self.fetchUserProfile()
     }
     
     func fetchUserProfile() {
