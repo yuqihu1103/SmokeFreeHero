@@ -21,6 +21,8 @@ class ViewController: UIViewController {
     //MARK: Create a variable to keep an instance of the current signed-in Firebase user.
     var currentUser:FirebaseAuth.User?
     
+    var timer: Timer?
+    
     override func loadView() {
         view = mainScreen
     }
@@ -94,6 +96,7 @@ class ViewController: UIViewController {
             object: nil)
         
         fetchSmokingInfo()
+        scheduleDailyFetch()
     }
     
     //MARK: This method is called just before the view controller's view is about to be removed from the view hierarchy, we remove the listener here from the app so that we do not run the listener infinitely.
@@ -182,5 +185,19 @@ class ViewController: UIViewController {
         }
     }
 
-
+    func scheduleDailyFetch() {
+        // Set up a repeating timer to fire every 24 hours (86400 seconds)
+        timer = Timer.scheduledTimer(timeInterval: 86400, target: self, selector: #selector(fetchDailySmokingInfo), userInfo: nil, repeats: true)
+    }
+    
+    @objc func fetchDailySmokingInfo() {
+        // Fetch smoking info
+        fetchSmokingInfo()
+    }
+    
+    // Remember to invalidate the timer when the view controller is deallocated or not needed anymore
+    deinit {
+        timer?.invalidate()
+    }
+    
 }
