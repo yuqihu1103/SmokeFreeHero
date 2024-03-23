@@ -4,7 +4,7 @@
 
 **Project Objectives:**
 
-The SmokeFreeHero is an iOS app dedicated to supporting quitting smoke. It provides functionalities such as tracking users’ smoke-free time, calculating associated financial and health benefits, and engaging in a community forum for mutual support and discussion with fellow smoke-quitters. Users can 
+The SmokeFreeHero is an iOS app dedicated to supporting quitting smoke. It provides functionalities such as tracking users’ smoke-free time, calculating associated financial and health benefits, and engaging in a community forum for mutual support and discussion with fellow smoke-quitters. Users will be created and authenticated with Firebase Authentication for security of personal information. Users record the number of cigarettes (or equivalent) and the amount of money they spend on smoking every day. Then, user can simply tap start when they quit smoking. The app will record how long they have been smoke-free, how many cigarettes are not smoked and how much money were saved. They can also share their thoughts and feelings with other users on the built-in forum.
 
 **Technologies:**
 
