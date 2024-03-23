@@ -41,7 +41,7 @@ class MainScreenView: UIScrollView {
     func setupButtonForum() {
         buttonForum = UIButton(type: .system)
         buttonForum.setTitle("Forum", for: .normal)
-        buttonForum.titleLabel?.font = .systemFont(ofSize: 32)
+        buttonForum.titleLabel?.font = .systemFont(ofSize: 24)
         buttonForum.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(buttonForum)
     }
@@ -49,30 +49,30 @@ class MainScreenView: UIScrollView {
     func setupButtonProfile() {
         buttonProfile = UIButton(type: .system)
         buttonProfile.setTitle("Profile", for: .normal)
-        buttonProfile.titleLabel?.font = .systemFont(ofSize: 32)
+        buttonProfile.titleLabel?.font = .systemFont(ofSize: 24)
         buttonProfile.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(buttonProfile)
     }
     
     func setupSmokingInfo() {
         labelSmokeFreeTime = UILabel()
-        labelSmokeFreeTime.font = .systemFont(ofSize: 18)
+        labelSmokeFreeTime.font = .systemFont(ofSize: 32)
         labelSmokeFreeTime.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(labelSmokeFreeTime)
         
         labelCigSaved = UILabel()
-        labelCigSaved.font = .systemFont(ofSize: 18)
+        labelCigSaved.font = .systemFont(ofSize: 32)
         labelCigSaved.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(labelCigSaved)
         
         labelMoneySaved = UILabel()
-        labelMoneySaved.font = .systemFont(ofSize: 18)
+        labelMoneySaved.font = .systemFont(ofSize: 32)
         labelMoneySaved.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(labelMoneySaved)
         
         buttonSetStartPoint = UIButton(type: .system)
         buttonSetStartPoint.setTitle("Set Start Point", for: .normal)
-        buttonSetStartPoint.titleLabel?.font = .systemFont(ofSize: 32)
+        buttonSetStartPoint.titleLabel?.font = .systemFont(ofSize: 20)
         buttonSetStartPoint.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(buttonSetStartPoint)
     }
@@ -84,7 +84,7 @@ class MainScreenView: UIScrollView {
             labelText.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 32),
             labelText.centerXAnchor.constraint(equalTo: self.safeAreaLayoutGuide.centerXAnchor),
             
-            labelSmokeFreeTime.topAnchor.constraint(equalTo: labelText.bottomAnchor, constant: 20),
+            labelSmokeFreeTime.topAnchor.constraint(equalTo: labelText.bottomAnchor, constant: 32),
             labelSmokeFreeTime.centerXAnchor.constraint(equalTo: self.safeAreaLayoutGuide.centerXAnchor),
             
             labelCigSaved.topAnchor.constraint(equalTo: labelSmokeFreeTime.bottomAnchor, constant: 10),
@@ -93,10 +93,10 @@ class MainScreenView: UIScrollView {
             labelMoneySaved.topAnchor.constraint(equalTo: labelCigSaved.bottomAnchor, constant: 10),
             labelMoneySaved.centerXAnchor.constraint(equalTo: self.safeAreaLayoutGuide.centerXAnchor),
             
-            buttonSetStartPoint.topAnchor.constraint(equalTo: labelMoneySaved.bottomAnchor, constant: 20),
+            buttonSetStartPoint.topAnchor.constraint(equalTo: labelMoneySaved.bottomAnchor, constant: 10),
             buttonSetStartPoint.centerXAnchor.constraint(equalTo: self.safeAreaLayoutGuide.centerXAnchor),
             
-            buttonForum.topAnchor.constraint(equalTo: buttonSetStartPoint.bottomAnchor, constant: 20),
+            buttonForum.topAnchor.constraint(equalTo: buttonSetStartPoint.bottomAnchor, constant: 32),
             buttonForum.centerXAnchor.constraint(equalTo: self.safeAreaLayoutGuide.centerXAnchor),
             
             buttonProfile.topAnchor.constraint(equalTo: buttonForum.bottomAnchor, constant: 20),

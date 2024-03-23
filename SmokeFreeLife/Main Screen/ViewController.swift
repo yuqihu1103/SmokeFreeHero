@@ -145,7 +145,7 @@ class ViewController: UIViewController {
                     
                     DispatchQueue.main.async {
                         // Update UI elements
-                        self.mainScreen.labelSmokeFreeTime.text = "Smoke Free for \(daysSinceLastSmoke) days"
+                        self.mainScreen.labelSmokeFreeTime.text = "Smoke Free for \(daysSinceLastSmoke) day(s)"
                         self.mainScreen.labelCigSaved.text = "Cigarettes Saved: \(cigsSaved)"
                         self.mainScreen.labelMoneySaved.text = String(format: "Money Saved: $%.2f", moneySaved)
                         self.mainScreen.buttonSetStartPoint.setTitle("I smoked. Start over.", for: .normal)
