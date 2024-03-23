@@ -15,6 +15,8 @@ class RegisterScreenViewController: UIViewController {
 
     let registerView = RegisterScreenView()
     
+    let notificationCenter = NotificationCenter.default
+    
     //for profile image
     var pickedImage:UIImage?
     let storage = Storage.storage()

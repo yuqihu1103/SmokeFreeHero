@@ -13,6 +13,8 @@ class SignInScreenViewController: UIViewController {
 
     let signInView = SignInScreenView()
     
+    let notificationCenter = NotificationCenter.default
+    
     override func loadView() {
         view = signInView
     }

@@ -49,6 +49,9 @@ extension RegisterScreenViewController{
             } else {
                 // the profile update is successful
                 self.createUserDocumentInFirestore(name: name, numCigarettes: numCigarettes, amountMoney: amountMoney)
+                self.notificationCenter.post(
+                    name: Notification.Name("userChanged"),
+                    object: nil)
                 self.navigationController?.popViewController(animated: true)
             }
         })

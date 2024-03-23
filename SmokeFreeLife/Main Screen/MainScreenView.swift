@@ -7,10 +7,15 @@
 
 import UIKit
 
-class MainScreenView: UIView {
+class MainScreenView: UIScrollView {
     var labelText: UILabel!
     var buttonForum: UIButton!
     var buttonProfile: UIButton!
+    
+    var labelSmokeFreeTime: UILabel!
+    var labelCigSaved: UILabel!
+    var labelMoneySaved: UILabel!
+    var buttonSetStartPoint: UIButton!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -19,6 +24,7 @@ class MainScreenView: UIView {
         setupLabelText()
         setupButtonForum()
         setupButtonProfile()
+        setupSmokingInfo()
         
         initConstraints()
     }
@@ -48,6 +54,29 @@ class MainScreenView: UIView {
         self.addSubview(buttonProfile)
     }
     
+    func setupSmokingInfo() {
+        labelSmokeFreeTime = UILabel()
+        labelSmokeFreeTime.font = .systemFont(ofSize: 18)
+        labelSmokeFreeTime.translatesAutoresizingMaskIntoConstraints = false
+        self.addSubview(labelSmokeFreeTime)
+        
+        labelCigSaved = UILabel()
+        labelCigSaved.font = .systemFont(ofSize: 18)
+        labelCigSaved.translatesAutoresizingMaskIntoConstraints = false
+        self.addSubview(labelCigSaved)
+        
+        labelMoneySaved = UILabel()
+        labelMoneySaved.font = .systemFont(ofSize: 18)
+        labelMoneySaved.translatesAutoresizingMaskIntoConstraints = false
+        self.addSubview(labelMoneySaved)
+        
+        buttonSetStartPoint = UIButton(type: .system)
+        buttonSetStartPoint.setTitle("Set Start Point", for: .normal)
+        buttonSetStartPoint.titleLabel?.font = .systemFont(ofSize: 32)
+        buttonSetStartPoint.translatesAutoresizingMaskIntoConstraints = false
+        self.addSubview(buttonSetStartPoint)
+    }
+
     // MARK: - Setting up constraints
     
     func initConstraints() {
@@ -55,10 +84,22 @@ class MainScreenView: UIView {
             labelText.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 32),
             labelText.centerXAnchor.constraint(equalTo: self.safeAreaLayoutGuide.centerXAnchor),
             
-            buttonForum.topAnchor.constraint(equalTo: buttonProfile.bottomAnchor, constant: 20),
+            labelSmokeFreeTime.topAnchor.constraint(equalTo: labelText.bottomAnchor, constant: 20),
+            labelSmokeFreeTime.centerXAnchor.constraint(equalTo: self.safeAreaLayoutGuide.centerXAnchor),
+            
+            labelCigSaved.topAnchor.constraint(equalTo: labelSmokeFreeTime.bottomAnchor, constant: 10),
+            labelCigSaved.centerXAnchor.constraint(equalTo: self.safeAreaLayoutGuide.centerXAnchor),
+            
+            labelMoneySaved.topAnchor.constraint(equalTo: labelCigSaved.bottomAnchor, constant: 10),
+            labelMoneySaved.centerXAnchor.constraint(equalTo: self.safeAreaLayoutGuide.centerXAnchor),
+            
+            buttonSetStartPoint.topAnchor.constraint(equalTo: labelMoneySaved.bottomAnchor, constant: 20),
+            buttonSetStartPoint.centerXAnchor.constraint(equalTo: self.safeAreaLayoutGuide.centerXAnchor),
+            
+            buttonForum.topAnchor.constraint(equalTo: buttonSetStartPoint.bottomAnchor, constant: 20),
             buttonForum.centerXAnchor.constraint(equalTo: self.safeAreaLayoutGuide.centerXAnchor),
             
-            buttonProfile.topAnchor.constraint(equalTo: labelText.bottomAnchor, constant: 20),
+            buttonProfile.topAnchor.constraint(equalTo: buttonForum.bottomAnchor, constant: 20),
             buttonProfile.centerXAnchor.constraint(equalTo: self.safeAreaLayoutGuide.centerXAnchor),
         ])
     }

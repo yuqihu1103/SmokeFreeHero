@@ -30,6 +30,9 @@ extension SignInScreenViewController {
                 }
             } else {
                 //MARK: if no error, the user login is successful...
+                self.notificationCenter.post(
+                    name: Notification.Name("userChanged"),
+                    object: nil)
                 self.navigationController?.popViewController(animated: true)
             }
         })
