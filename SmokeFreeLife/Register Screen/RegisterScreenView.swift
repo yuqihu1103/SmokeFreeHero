@@ -128,7 +128,7 @@ class RegisterScreenView: UIView {
     
     func setuptextFieldNumCigarettes() {
             textFieldNumCigarettes = UITextField()
-            textFieldNumCigarettes.placeholder = "Number of cigarettes per day"
+            textFieldNumCigarettes.placeholder = "Number of cigarettes per day (non-negative integer)"
             textFieldNumCigarettes.keyboardType = .numberPad
             textFieldNumCigarettes.borderStyle = .roundedRect
             textFieldNumCigarettes.translatesAutoresizingMaskIntoConstraints = false
@@ -137,7 +137,7 @@ class RegisterScreenView: UIView {
         
         func setuptextFieldAmountMoney() {
             textFieldAmountMoney = UITextField()
-            textFieldAmountMoney.placeholder = "Amount of money spent per day"
+            textFieldAmountMoney.placeholder = "Amount of money spent per day (non-negative number)"
             textFieldAmountMoney.keyboardType = .decimalPad
             textFieldAmountMoney.borderStyle = .roundedRect
             textFieldAmountMoney.translatesAutoresizingMaskIntoConstraints = false

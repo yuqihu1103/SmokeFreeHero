@@ -13,6 +13,8 @@ class ProfileScreenViewController: UIViewController {
     let profileView = ProfileScreenView()
     let defaultProfileImage = UIImage(named: "default_profile_image") // Placeholder image
     
+    let notificationCenter = NotificationCenter.default
+    
     override func loadView() {
         view = profileView
     }
@@ -22,6 +24,19 @@ class ProfileScreenViewController: UIViewController {
         
         title = "Profile"
         fetchUserProfile()
+        
+        profileView.buttonEdit.addTarget(self, action: #selector(onButtonEditTapped), for: .touchUpInside)
+        
+        //MARK: observing text if it is updated in NotificationCenter...
+        notificationCenter.addObserver(
+            self,
+            selector: #selector(notificationReceivedForTextChanged(notification:)),
+            name: Notification.Name("infoEdited"),
+            object: nil)
+    }
+    
+    @objc func notificationReceivedForTextChanged(notification: Notification){
+        self.fetchUserProfile()
     }
     
     func fetchUserProfile() {
@@ -60,5 +75,9 @@ class ProfileScreenViewController: UIViewController {
             }
         }.resume()
     }
+    
+    @objc func onButtonEditTapped() {
+        let editProfileScreen = EditProfileScreenViewController()
+        navigationController?.pushViewController(editProfileScreen, animated: true)
+    }
 }
-

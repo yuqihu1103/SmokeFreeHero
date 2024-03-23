@@ -79,6 +79,17 @@ class ForumScreenViewController:  UIViewController, UITableViewDataSource, UITab
         forumScreen.postTableView.reloadData()
         
         forumScreen.buttonPost.addTarget(self, action: #selector(onButtonPostTapped), for: .touchUpInside)
+        
+        //MARK: recognizing the taps on the app screen, not the keyboard...
+        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(hideKeyboardOnTap))
+        tapRecognizer.cancelsTouchesInView = false
+        view.addGestureRecognizer(tapRecognizer)
+    }
+    
+    //MARK: Hide Keyboard...
+    @objc func hideKeyboardOnTap(){
+        //MARK: removing the keyboard from screen...
+        view.endEditing(true)
     }
     
     
