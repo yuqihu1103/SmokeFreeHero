@@ -12,7 +12,7 @@ import FirebaseFirestoreSwift
 extension ThreadDetailViewController{
 
     func savePost(thread:Thread){
-        if let post = self.currentPost{
+        if let post = self.rootPostId{
             let collectionMe = db
                 .collection("ThreadDetails")
                 .document(post)

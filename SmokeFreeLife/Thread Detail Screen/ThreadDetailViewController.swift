@@ -16,7 +16,6 @@ class ThreadDetailViewController: UIViewController, UITableViewDataSource, UITab
     let db = Firestore.firestore()
     var currentUserName: String?
     var threads = [Thread]()
-    var currentPost: String?
     var rootPost: Post?
     var rootPostId: String?
     
