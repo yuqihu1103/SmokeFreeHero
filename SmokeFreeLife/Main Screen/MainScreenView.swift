@@ -33,7 +33,7 @@ class MainScreenView: UIScrollView {
     
     func setupLabelText() {
         labelText = UILabel()
-        labelText.font = .boldSystemFont(ofSize: 32)
+        labelText.font = .boldSystemFont(ofSize: 24)
         labelText.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(labelText)
     }
@@ -56,17 +56,17 @@ class MainScreenView: UIScrollView {
     
     func setupSmokingInfo() {
         labelSmokeFreeTime = UILabel()
-        labelSmokeFreeTime.font = .systemFont(ofSize: 32)
+        labelSmokeFreeTime.font = .systemFont(ofSize: 24)
         labelSmokeFreeTime.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(labelSmokeFreeTime)
         
         labelCigSaved = UILabel()
-        labelCigSaved.font = .systemFont(ofSize: 32)
+        labelCigSaved.font = .systemFont(ofSize: 24)
         labelCigSaved.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(labelCigSaved)
         
         labelMoneySaved = UILabel()
-        labelMoneySaved.font = .systemFont(ofSize: 32)
+        labelMoneySaved.font = .systemFont(ofSize: 24)
         labelMoneySaved.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(labelMoneySaved)
         

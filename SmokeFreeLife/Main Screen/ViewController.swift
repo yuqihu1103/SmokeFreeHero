@@ -140,7 +140,7 @@ class ViewController: UIViewController {
                     // Calculate time since last smoke in days
                     let currentDate = Date().timeIntervalSince1970
                     let timeSinceLastSmoke = currentDate - lastSmokeTimestamp
-                    let daysSinceLastSmoke = Int(timeSinceLastSmoke / (60 * 60 * 24)) + 1
+                    let daysSinceLastSmoke = Int(timeSinceLastSmoke / (60 * 60 * 24))
                     
                     // Calculate cigs saved and money saved since stopped smoking
                     let cigsSaved = daysSinceLastSmoke * avgCigsPerDay
@@ -156,7 +156,7 @@ class ViewController: UIViewController {
                 } else {
                     // User has not set the last smoke time, prompt to start recording
                     DispatchQueue.main.async {
-                        self.mainScreen.labelSmokeFreeTime.text = "Start Recording Smoke-Free Time"
+                        self.mainScreen.labelSmokeFreeTime.text = "Record Smoke-Free Time Now"
                         self.mainScreen.labelCigSaved.text = "Cigarettes Saved: 0"
                         self.mainScreen.labelMoneySaved.text = "Money Saved: $0.00"
                         self.mainScreen.buttonSetStartPoint.setTitle("Set Start Point", for: .normal)
