@@ -134,6 +134,7 @@ class ForumScreenViewController:  UIViewController, UITableViewDataSource, UITab
         
         threadDetailViewController.currentUserName = self.currentUserName
         threadDetailViewController.rootPostId = postSelected.id
+        threadDetailViewController.title = postSelected.title
         navigationController?.pushViewController(threadDetailViewController, animated: true)
     }
     

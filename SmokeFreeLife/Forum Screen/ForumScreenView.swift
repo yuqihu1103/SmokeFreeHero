@@ -71,7 +71,7 @@ class ForumScreenView: UIScrollView {
     
     func setupTextFieldContent(){
         textFieldContent = UITextField()
-        textFieldContent.placeholder = "..."
+        textFieldContent.placeholder = "Body text"
         textFieldContent.borderStyle = .roundedRect
         textFieldContent.translatesAutoresizingMaskIntoConstraints = false
         bottomAddView.addSubview(textFieldContent)

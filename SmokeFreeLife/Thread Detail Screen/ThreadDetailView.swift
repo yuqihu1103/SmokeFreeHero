@@ -30,13 +30,13 @@ class ThreadDetailView: UIScrollView {
     func setupLabels() {
         labelContent = UILabel()
         labelContent.text = ""
-        labelContent.font = UIFont.monospacedSystemFont(ofSize: 30, weight: .regular)
+        labelContent.font = UIFont.monospacedSystemFont(ofSize: 22, weight: .regular)
         labelContent.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(labelContent)
         
         ThreadStarterName = UILabel()
         ThreadStarterName.text = ""
-        ThreadStarterName.font = UIFont.boldSystemFont(ofSize: 20)
+        ThreadStarterName.font = UIFont.boldSystemFont(ofSize: 18)
         ThreadStarterName.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(ThreadStarterName)
         
