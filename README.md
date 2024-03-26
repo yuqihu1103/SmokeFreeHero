@@ -14,8 +14,9 @@ Swift, Firebase (Firebase Authentication, Firestore Database, and Firebase Stora
 
 **Project Demo Video:** https://youtu.be/hxtXTSutDzY
 
-**Overview**
+**Overview (gif)**
 
+![smokefreehero](https://github.com/yuqihu1103/SmokeFreeHero/assets/133090163/6e299cb0-d096-480b-a4e6-2baaa00b252b)
 
 ## Instructions to Build and Use
 
